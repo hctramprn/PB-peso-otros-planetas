@@ -11,16 +11,32 @@
       var usuario = prompt("¿Cuál es tu peso?");
       var peso = parseFloat(usuario);
 
+      var planeta = prompt("Elige cuál es tu planeta.\n1 es Marte, 2 es Júpiter");
+      var nombre;
+
       var g_tierra = 9.8;
       var g_marte = 3.7;
       var g_jupiter = 24.8;
 
       var peso_final;
 
-      peso_final = peso * g_marte / g_tierra;
+      if (planeta == 1) {
+        peso_final = peso * g_marte / g_tierra;
+        nombre = "Marte";
+      }
+      else if (planeta == 2){
+        peso_final = peso * g_jupiter / g_tierra;
+        nombre = "Júpiter";
+      }
+      else {
+        peso_final = 2818392;
+        nombre = "realidad debe de ser el mismo que el de tu mamá que";
+      }
+
+
       peso_final = peso_final.toFixed(2);
 
-      document.write("Tu peso en Marte es de <strong>" + peso_final + " kilos </strong>");
+      document.write("Tu peso en " + nombre + " es de <strong>" + peso_final + " kilos </strong>");
     </script>
   </body>
 </html>
